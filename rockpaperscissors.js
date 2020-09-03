@@ -1,17 +1,3 @@
-function numberOfGames() {
-
-    while (typeof x != 'number') {
-        x = prompt('How many rounds to Play ?');
-        if (x == 0) {
-            alert('Error');
-        }
-        else if (typeof x == 'number') {
-            return x;
-        }
-        alert('Number ONLY !!!');
-    }
-}
-
 function computerPlay() {
 
     let computerMoves = ['rock', 'paper', 'scissors'];
@@ -22,7 +8,7 @@ function computerPlay() {
 function playerPlay() {
 
     while (playerSelection != 'rock' || playerSelection != 'paper' || playerSelection != 'scissors') {
-        playerSelection = window.prompt('Player Score = ' + (playerScore) + '\nComputer Score = ' + (computerScore) + '\nRock, Paper, or Scissors ?');
+        playerSelection = window.prompt('Player Score = ' + (playerScore) + '\nComputer Score = ' + (computerScore) + '\nRock, Paper, or Scissors ( 5 Rounds ) ?');
         playerSelection = playerSelection.toLowerCase();
         if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') {
             return playerSelection;
@@ -67,25 +53,22 @@ let playerSelection;
 let computerSelection;
 let playerScore;
 let computerScore;
-let x;
 
 function game() {
-    
-    
+
     playerScore = 0;
     computerScore = 0;
-    numberOfGames();
-    for (let i = 0; i < x; i++) {
+    for (let i = 0; i < 5; i++) {
         computerPlay();
         playerPlay();
         playRound(playerSelection, computerSelection);
     }
     if (playerScore > computerScore) {
-        alert('Winner Winner Chicken Dinner ! Congratulations !');
+        alert('You Win ! Congratulations !');
     } else if (playerScore < computerScore) {
-        alert('No Chicken Dinner For You ! Try Harder Next Time !');
+        alert('You Lose ! Try Harder Next Time !');
     } else {
-        alert('No Chicken Dinner For Anyone !!!')
+        alert('It\'s a Draw ! Better Luck Next Time !');
     }
     alert('Type game(); on console to play again !');
     return ('Type game(); on console to play again !');
