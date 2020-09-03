@@ -1,8 +1,10 @@
 function numberOfGames() {
 
     while (typeof x != 'number') {
-        x = prompt('How many rounds to Play ?');
+        x = prompt('How many rounds to Play (1-10) ?');
+        x = Number(x);
         if (x == 0) {
+            x = String(x);
             alert('Error');
         }
         else if (typeof x == 'number') {
