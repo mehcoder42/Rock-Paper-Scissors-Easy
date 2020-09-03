@@ -1,3 +1,17 @@
+function numberOfGames() {
+
+    while (typeof x != 'number') {
+        x = prompt('How many rounds to Play ?');
+        if (x == 0) {
+            alert('Error');
+        }
+        else if (typeof x == 'number') {
+            return x;
+        }
+        alert('Number ONLY !!!');
+    }
+}
+
 function computerPlay() {
 
     let computerMoves = ['rock', 'paper', 'scissors'];
@@ -54,19 +68,6 @@ let computerSelection;
 let playerScore;
 let computerScore;
 let x;
-
-function numberOfGames() {
-
-    while (typeof x != 'number') {
-        x = prompt('How many rounds to Play ?');
-        x = Number(x);
-        if (typeof x == 'number') {
-            return x;
-        }
-        alert('Number ONLY !!!');
-    }
-}
-
 
 function game() {
     
